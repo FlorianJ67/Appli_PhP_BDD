@@ -21,6 +21,9 @@
                     <li>
                         <a href="recap.php">Récap</a>
                     </li>
+                    <li>
+                        <p>Nombre de produit : <?php echo count($_SESSION['products'])?></p>
+                    </li>
                 </ul>
             </nav>
         </header>
