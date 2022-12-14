@@ -27,6 +27,11 @@ nav ul li a {
     text-shadow: 1px 1px 1px rgb(206, 206, 206);
     font-size: 20px;
 }
+nav ul li p {
+    color: rgb(185, 186, 187);
+    text-shadow: 1px 1px 1px rgb(206, 206, 206);
+    font-size: 20px;
+}
 nav ul li:hover a{
     font-weight: bold;
     color: rgb(44, 40, 46);
