@@ -24,9 +24,10 @@
                 </ul>
             </nav>
         </header>
+<div id="createProduct">
 
-        <h1>Ajouter un produit</h1>
-        <form action="traitement.php" method="post">
+    <h1>Ajouter un produit</h1>
+    <form action="traitement.php" method="post">
             <p>
                 <label>
                     Nom du produit :
@@ -49,6 +50,7 @@
                 <input type="submit" name="submit" value="Ajouter le produit">
             </p>
         </form>
-
+</div>
+        
     </body>
-</html>
+    </html>

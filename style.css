@@ -6,7 +6,7 @@
   }
 nav {
     height: 50px;
-    background-color: rgb(216, 155, 63);
+    background-color: rgb(124, 112, 95);
     border-radius: 0 0 15px 15px;
     box-shadow: 0 0 2px 2px;
     display: flex;
@@ -20,12 +20,37 @@ nav ul{
     width: 80%;
 }
 nav ul li a {
-    color: rgb(174, 120, 224);
+    color: rgb(185, 186, 187);
     text-decoration: none;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 1px rgb(206, 206, 206);
     font-size: 20px;
 }
 nav ul li:hover a{
     font-weight: bold;
-    color: rgb(235, 190, 255);
+    color: rgb(44, 40, 46);
+}
+#createProduct {
+    margin: 1.5%;
+    width: 30%;
+    height: 200px;
+    background-color: #d7d3dbb5;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 12px;
+    box-shadow: 2px 2px 0 0;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+form p:last-child input:last-child {
+    background-color: rgb(71, 68, 66);
+    border-radius: 0 0 5px 0;
+    height: 130%;
+    width: 130px;
+    color: white;
 }
