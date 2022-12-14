@@ -58,7 +58,7 @@
     <?php 
         $lastProduct = end($_SESSION['products']); 
     ?>
-    <p><?php echo "Le dernier produit ajouter est :<br> - «" . ucfirst($lastProduct['name']) . "» en " . $lastProduct['qtt'] . " exemplaire à " . $lastProduct['price'] . "€ l'unité"  ?></p>
+    <p><?php echo "Le dernier produit ajouter est :<br>«" . ucfirst($lastProduct['name']) . "» en " . $lastProduct['qtt'] . " exemplaire"; if($lastProduct['qtt'] > 1){echo "s";} echo " à " . $lastProduct['price'] . "€ l'unité"  ?></p>
 
 </div>
         

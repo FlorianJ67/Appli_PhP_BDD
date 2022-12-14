@@ -49,11 +49,12 @@
                     
                     $totalGeneral = 0;
                     foreach($_SESSION['products'] as $index => $product){
+
                         echo "<tr>
                         <td>". $index ."</td>
                         <td>". $product['name'] ."</td>
                         <td>". number_format($product['price'], 2, ",", "&nbsp;") ."&nbsp;€</td>
-                        <td>". $product['qtt'] ."</td>
+                        <td><button class='qttmod' >-</button>". $product['qtt'] ."<button class='qttmod' >+</button></td>
                         <td>". number_format($product['total'], 2, ",", "&nbsp;") ."&nbsp;€</td>
                         </tr>";
                         $totalGeneral += $product['total'];
