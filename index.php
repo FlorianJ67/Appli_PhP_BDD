@@ -54,6 +54,13 @@
             </p>
         </form>
 </div>
+<div id="lastpush">
+    <?php 
+        $lastProduct = end($_SESSION['products']); 
+    ?>
+    <p><?php echo "Le dernier produit ajouter est :<br> - «" . ucfirst($lastProduct['name']) . "» en " . $lastProduct['qtt'] . " exemplaire à " . $lastProduct['price'] . "€ l'unité"  ?></p>
+
+</div>
         
     </body>
     </html>
