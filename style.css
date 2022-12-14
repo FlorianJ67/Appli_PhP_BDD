@@ -59,7 +59,7 @@ thead {
 }
 
 /*+ and - button on tab*/
-td:nth-child(4){
+td:nth-child(4) div{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -71,6 +71,22 @@ td:nth-child(4){
     border: none;
     background-color: rgb(43, 41, 41);
     color: white;
+}
+/*remove button*/
+td:nth-child(5) div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 5%;
+}
+.removebtn {
+    border-radius: 25px;
+    border: none;
+}
+.removebtn i {
+    transform: scale(1.8);
+    color: rgb(214, 62, 62);
 }
 
 /*Form Product*/

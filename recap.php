@@ -8,6 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device_width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <title>Récaputulatif des produit</title>
     </head>
@@ -54,8 +55,8 @@
                         <td>". $index ."</td>
                         <td>". $product['name'] ."</td>
                         <td>". number_format($product['price'], 2, ",", "&nbsp;") ."&nbsp;€</td>
-                        <td><button class='qttmod' >-</button>". $product['qtt'] ."<button class='qttmod' >+</button></td>
-                        <td>". number_format($product['total'], 2, ",", "&nbsp;") ."&nbsp;€</td>
+                        <td><div><button class='qttmod' >-</button><p>". $product['qtt'] ."</p><button class='qttmod' >+</button><div></td>
+                        <td><div><p>". number_format($product['total'], 2, ",", "&nbsp;") ."&nbsp;€  </p><button class='removebtn' ><i class='fa fa-trash-o'></i></button></div></td>
                         </tr>";
                         $totalGeneral += $product['total'];
                     }
