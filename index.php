@@ -7,10 +7,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device_width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
         
         <title>Ajout produit</title>
     </head>
     <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.php">Index</a>
+                    </li>
+                    <li>
+                        <a href="recap.php">Récap</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
         <h1>Ajouter un produit</h1>
         <form action="traitement.php" method="post">

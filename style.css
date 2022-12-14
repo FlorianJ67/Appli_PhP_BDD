@@ -1,0 +1,31 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+nav {
+    height: 50px;
+    background-color: rgb(216, 155, 63);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 0 2px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    width: 80%;
+}
+nav ul li a {
+    color: rgb(174, 120, 224);
+    text-decoration: none;
+    text-shadow: 1px 1px 1px black;
+    font-size: 20px;
+}
+nav ul li:hover a{
+    font-weight: bold;
+    color: rgb(235, 190, 255);
+}

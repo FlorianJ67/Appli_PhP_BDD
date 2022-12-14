@@ -7,10 +7,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device_width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
         
         <title>Récaputulatif des produit</title>
     </head>
     <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.php">Index</a>
+                    </li>
+                    <li>
+                        <a href="recap.php">Récap</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
         <?php 
             if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
                 echo "<p>Aucun produit en session...</p>";
