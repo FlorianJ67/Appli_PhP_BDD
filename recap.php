@@ -55,7 +55,7 @@
                         <td>". $index ."</td>
                         <td>". $product['name'] ."</td>
                         <td>". number_format($product['price'], 2, ",", "&nbsp;") ."&nbsp;€</td>
-                        <td><div><button class='qttmod' >-</button><p>". $product['qtt'] ."</p><button class='qttmod' >+</button><div></td>
+                        <td><div><button class='qttmod' >-</button><p>". $product['qtt'] ."</p><button class='qttmod' >+</button></div></td>
                         <td><div><p>". number_format($product['total'], 2, ",", "&nbsp;") ."&nbsp;€  </p><button class='removebtn' ><i class='fa fa-trash-o'></i></button></div></td>
                         </tr>";
                         $totalGeneral += $product['total'];
