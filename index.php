@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@
                         <a href="recap.php">Récap</a>
                     </li>
                     <li>
-                        <p>Nombre de produit : <?php echo count($_SESSION['products'])?></p>
+                        <p>Nombre de produit : <?= nbProduits() ?></p>
                     </li>
                 </ul>
             </nav>
