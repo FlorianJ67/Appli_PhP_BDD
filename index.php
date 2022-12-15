@@ -55,13 +55,17 @@
             </p>
         </form>
 </div>
-<div id="lastpush">
-    <?php 
-        $lastProduct = end($_SESSION['products']); 
+<?php 
+        if(!empty($_SESSION['products'])) {
+            echo "<div id='lastpush'>";
+            
+            $lastProduct = end($_SESSION['products']); 
+            echo "<p>Le dernier produit ajouter est :<br>«" . ucfirst($lastProduct['name']) . "» en " . $lastProduct['qtt'] . " exemplaire"; if($lastProduct['qtt'] > 1){echo "s";} echo " à " . $lastProduct['price'] . "€ l'unité </p>";
+            
+            echo "</div>";
+        } 
     ?>
-    <p><?php echo "Le dernier produit ajouter est :<br>«" . ucfirst($lastProduct['name']) . "» en " . $lastProduct['qtt'] . " exemplaire"; if($lastProduct['qtt'] > 1){echo "s";} echo " à " . $lastProduct['price'] . "€ l'unité"  ?></p>
 
-</div>
         
     </body>
     </html>

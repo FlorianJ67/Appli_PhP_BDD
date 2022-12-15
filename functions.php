@@ -15,3 +15,5 @@ function nbProduits() {
         return $totalProduct;
     }
 }
+
+?>
