@@ -23,7 +23,7 @@
                         <a href="recap.php">Récap</a>
                     </li>
                     <li>
-                        <p>Nombre de produit : <?php echo count($_SESSION['products'])?></p>
+                        <p>Nombre de produit : <?php if(!empty($_SESSION['products'])){ echo count($_SESSION['products']);}?></p>
                     </li>
                 </ul>
             </nav>
