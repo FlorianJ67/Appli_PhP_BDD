@@ -1,7 +1,10 @@
 <?php
     session_start();
     include "functions.php";
+
+    // remember to look for preg_filter(pattern, replacement, input, limit, count)
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,8 +67,8 @@
             
             echo "</div>";
         } 
-    ?>
 
+    ?>
         
     </body>
     </html>

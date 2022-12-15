@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@
                         <a href="recap.php">Récap</a>
                     </li>
                     <li>
-                        <p>Nombre de produit : <?php if(!empty($_SESSION['products'])){ echo count($_SESSION['products']);}?></p>
+                        <p>Nombre de produit : <?= nbProduits() ?></p>
                     </li>
                 </ul>
             </nav>
@@ -52,19 +53,19 @@
                     foreach($_SESSION['products'] as $index => $product){
 
                         echo "<tr>
-                        <td>". $index ."</td>
-                        <td>". $product['name'] ."</td>
-                        <td>". number_format($product['price'], 2, ",", "&nbsp;") ."&nbsp;€</td>
-                        <td><div><a href='' class='qttmod'>-</a><p>". $product['qtt'] ."</p><a href='' class='qttmod'>+</a></td>
-                        <td><div><p>". number_format($product['total'], 2, ",", "&nbsp;") ."&nbsp;€  </p><a class='removebtn' ><i class='fa fa-trash-o'></i></a></div></td>
-                        </tr>";
+                                <td>". $index ."</td>
+                                <td>". $product['name'] ."</td>
+                                <td>". number_format($product['price'], 2, ",", "&nbsp;") ."&nbsp;€</td>
+                                <td><div><a href='traitement.php?action=downqty&id=$index' class='qttmod'>-</a><p>". $product['qtt'] ."</p><a href='traitement.php?action=upqty&id=$index' class='qttmod'>+</a></td>
+                                <td><div><p>". number_format($product['total'], 2, ",", "&nbsp;") ."&nbsp;€  </p><a href='traitement.php?action=suppProduit&id=$index' class='removebtn' ><i class='fa fa-trash-o'></i></a></div></td>
+                            </tr>";
                         $totalGeneral += $product['total'];
                     }
                     echo    "<tr>
-                    <td colspan=4>Total général : </td>
-                    <td><strong>" . number_format($totalGeneral, 2, ",", "&nbsp") . "&nbsp;€</strong></td>
-                    </tr>
-                    </tbody>
+                                <td colspan=4>Total général : </td>
+                                <td><strong>" . number_format($totalGeneral, 2, ",", "&nbsp") . "&nbsp;€</strong></td>
+                            </tr>
+                        </tbody>
                     </table>";
                 }
                 ?>
@@ -73,4 +74,4 @@
             </div>
         </main>
     </body>
-    </html>
+</html>
