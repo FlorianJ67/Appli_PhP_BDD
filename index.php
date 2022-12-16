@@ -27,7 +27,7 @@
                         <a href="recap.php">Récap</a>
                     </li>
                     <li>
-                        <p id="shoppingCart"><i class="fa fa-shopping-cart"></i><?= nbProduits() ?></p>
+                        <p id="shoppingCart"><i class="fa fa-shopping-cart" <?php if(nbProduits() == null || nbProduits() == 0){echo "style= 'display: none'"; } ?>></i><?= nbProduits() ?></p>
                     </li>
                 </ul>
             </nav>
