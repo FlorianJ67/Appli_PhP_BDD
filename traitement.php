@@ -21,10 +21,22 @@
                     ];
         
                     $_SESSION['products'][] = $product;
+
+                    // stock the last product info to display it when submiting
+                    if($product['qtt'] > 1){
+                        // more than 1 article
+                        $_SESSION['message'] = "<div class='message' ><p>Le dernier produit ajouter est :<br>«" . ucfirst($product['name']) . "» en " . $product['qtt'] . " exemplaires à " . $product['price'] . "€ l'unité </p></div>";
+                    } else {
+                        // 1 article
+                        $_SESSION['message'] = "<div class='message' ><p>Le dernier produit ajouter est :<br>«" . ucfirst($product['name']) . "» en " . $product['qtt'] . " exemplaire à " . $product['price'] . "€ l'unité </p></div>";
         
+                    }
+
+                } else {
+                    // stock an error message to display when it failed to submit
+                    $_SESSION['message'] = "<div class='message' ><p class='error'>Le produit n'a pas pu être ajouté</p></div>";
                 }
-                
-            }
+            } 
         
             header("Location:index.php");
             break;
@@ -36,7 +48,7 @@
             break;
         
         // Up the quantity
-        case "upqty":
+        case "upQty":
             $_SESSION["products"][$_GET["id"]]["qtt"]++;
             // refresh the price
             $_SESSION["products"][$_GET["id"]]["total"] = $_SESSION["products"][$_GET["id"]]["qtt"]*$_SESSION["products"][$_GET["id"]]["price"];
@@ -44,7 +56,7 @@
             break;
 
         // Down the quantity
-        case "downqty":
+        case "downQty":
             $_SESSION["products"][$_GET["id"]]["qtt"]--;
             // refresh the price
             $_SESSION["products"][$_GET["id"]]["total"] = $_SESSION["products"][$_GET["id"]]["qtt"]*$_SESSION["products"][$_GET["id"]]["price"];

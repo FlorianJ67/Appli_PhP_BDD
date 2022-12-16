@@ -24,7 +24,7 @@
                         <a href="recap.php">Récap</a>
                     </li>
                     <li>
-                        <p>Nombre de produit : <?= nbProduits() ?></p>
+                        <p id="shoppingCart"><i class="fa fa-shopping-cart"></i><?= nbProduits() ?></p>
                     </li>
                 </ul>
             </nav>
@@ -34,7 +34,7 @@
 
                 <?php 
                 if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
-                    echo "<p>Aucun produit en session...</p>";
+                    echo "<div class='message'><p>Aucun produit en session...</p></div>";
                 }
                 else {
                     echo "<table>
@@ -56,8 +56,8 @@
                                 <td>". $index ."</td>
                                 <td>". $product['name'] ."</td>
                                 <td>". number_format($product['price'], 2, ",", "&nbsp;") ."&nbsp;€</td>
-                                <td><div><a href='traitement.php?action=downqty&id=$index' class='qttmod'>-</a><p>". $product['qtt'] ."</p><a href='traitement.php?action=upqty&id=$index' class='qttmod'>+</a></td>
-                                <td><div><p>". number_format($product['total'], 2, ",", "&nbsp;") ."&nbsp;€  </p><a href='traitement.php?action=suppProduit&id=$index' class='removebtn' ><i class='fa fa-trash-o'></i></a></div></td>
+                                <td><div><a href='traitement.php?action=downQty&id=$index' class='qttmod'>-</a><p>". $product['qtt'] ."</p><a href='traitement.php?action=upQty&id=$index' class='qttmod'>+</a></td>
+                                <td><div><p>". number_format($product['total'], 2, ",", "&nbsp;") ."&nbsp;€  </p><a href='traitement.php?action=suppProduit&id=$index' class='removeBtn' ><i class='fa fa-trash-o'></i></a></div></td>
                             </tr>";
                         $totalGeneral += $product['total'];
                     }
@@ -67,10 +67,11 @@
                             </tr>
                         </tbody>
                     </table>";
+
+                    echo "<a href='traitement.php?action=viderPanier'>Vider le panier</a>";
                 }
                 ?>
 
-                <a href="traitement.php?action=viderPanier">Vider le panier</a>
             </div>
         </main>
     </body>

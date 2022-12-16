@@ -12,7 +12,7 @@ function nbProduits() {
             }
 
         }
-        return $totalProduct;
+        echo " " . $totalProduct;
     }
 }
 
