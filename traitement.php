@@ -29,21 +29,33 @@
             header("Location:index.php");
             break;
 
+        // Clear all
         case "viderPanier":
             unset($_SESSION["products"]);
             header("Location:recap.php");die;
             break;
+        
+        // Up the quantity
         case "upqty":
             $_SESSION["products"][$_GET["id"]]["qtt"]++;
+            // refresh the price
+            $_SESSION["products"][$_GET["id"]]["total"] = $_SESSION["products"][$_GET["id"]]["qtt"]*$_SESSION["products"][$_GET["id"]]["price"];
             header("Location:recap.php");die;
             break;
+
+        // Down the quantity
         case "downqty":
-            if($_SESSION["products"][$_GET["id"]]["qtt"] <= 1){
+            $_SESSION["products"][$_GET["id"]]["qtt"]--;
+            // refresh the price
+            $_SESSION["products"][$_GET["id"]]["total"] = $_SESSION["products"][$_GET["id"]]["qtt"]*$_SESSION["products"][$_GET["id"]]["price"];
+            // if quantity = 0 ; delete the article
+            if($_SESSION["products"][$_GET["id"]]["qtt"] < 1){
                 unset($_SESSION["products"][$_GET["id"]]);
             }
-            $_SESSION["products"][$_GET["id"]]["qtt"]--;
             header("Location:recap.php");die;
             break;
+
+        // Delete 1 product
         case "suppProduit":
             unset($_SESSION["products"][$_GET["id"]]);
             header("Location:recap.php");die;
