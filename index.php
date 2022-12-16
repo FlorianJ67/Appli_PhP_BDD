@@ -12,6 +12,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device_width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <title>Ajout produit</title>
     </head>
@@ -26,7 +27,7 @@
                         <a href="recap.php">Récap</a>
                     </li>
                     <li>
-                        <p>Nombre de produit : <?= nbProduits() ?></p>
+                        <p id="shoppingCart"><i class="fa fa-shopping-cart"></i><?= nbProduits() ?></p>
                     </li>
                 </ul>
             </nav>
@@ -53,22 +54,18 @@
                     <input type="number" name="qtt" value="1" min="0">
                 </label>
             </p>
-            <p>
+            <p >
                 <input type="submit" name="submit" value="Ajouter le produit">
             </p>
         </form>
 </div>
 <?php 
-        if(!empty($_SESSION['products'])) {
-            echo "<div id='lastpush'>";
-            
-            $lastProduct = end($_SESSION['products']); 
-            echo "<p>Le dernier produit ajouter est :<br>«" . ucfirst($lastProduct['name']) . "» en " . $lastProduct['qtt'] . " exemplaire"; if($lastProduct['qtt'] > 1){echo "s";} echo " à " . $lastProduct['price'] . "€ l'unité </p>";
-            
-            echo "</div>";
-        } 
+    if(isset($_SESSION['message'])) {
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
+    } 
 
-    ?>
+?>
         
     </body>
     </html>

@@ -58,7 +58,9 @@ table {
 thead {
     border: 2px solid;
 }
-
+#shoppingCart {
+    font-size: 170%;
+}
 /*+ and - button on tab*/
 td:nth-child(4) div{
     display: flex;
@@ -67,8 +69,9 @@ td:nth-child(4) div{
 }
 .qttmod {
     border-radius: 25px;
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
+    padding: 2px;
     border: none;
     background-color: rgb(43, 41, 41);
     color: white;
@@ -82,12 +85,12 @@ td:nth-child(5) div {
     margin-left: 10%;
     margin-right: 5%;
 }
-.removebtn {
+.removeBtn {
     border-radius: 25px;
     border: none;
 }
-.removebtn i {
-    transform: scale(1.8);
+.removeBtn i {
+    font-size: 170%;
     color: rgb(214, 62, 62);
 }
 
@@ -120,7 +123,7 @@ form p:last-child input:last-child {
     width: 130px;
     color: white;
 }
-#lastpush {
+#message {
     margin: 1.5%;
     width: 40%;
     height: 70px;
@@ -132,4 +135,8 @@ form p:last-child input:last-child {
     justify-content: space-around;
     padding: 12px;
     box-shadow: 2px 2px 0 0;
+}
+.error {
+    color: rgb(209, 41, 41);
+    font-weight: bold;
 }
