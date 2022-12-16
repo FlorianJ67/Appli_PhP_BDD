@@ -42,12 +42,30 @@ nav ul li:hover a{
     flex-direction: column;
     align-items: center;
 }
+#deleteTab{
+    margin-top: 0.9%;
+    border: #673ab7 solid 1px;
+    height: 50px;
+    width: 15%;
+    text-align: center;
+    padding-top: 0.75%;
+    text-decoration: none;
+    background-color: #db6ceb;
+    color: white;
+}
 
 /*Tableau*/
 table, th, td {
     border: 1px solid;
     height: 40px;
     text-align: center;
+}
+table tr:nth-child(even) {
+    background-color: rgb(216, 216, 216);
+}
+table tbody tr:last-child{
+    background-color: white;
+    font-size: 140%;
 }
 table {
     border: 3px solid;
@@ -116,6 +134,9 @@ form {
 form p {
     margin-top: 5px;
 }
+form p:hover{
+    color: rgb(99, 97, 100);
+}
 form p:last-child input:last-child {
     background-color: rgb(71, 68, 66);
     border-radius: 0 0 5px 0;
@@ -123,6 +144,10 @@ form p:last-child input:last-child {
     width: 130px;
     color: white;
 }
+form p:last-child:hover input:last-child {
+    color: rgb(125, 204, 178);
+}
+
 .message {
     margin: 1.5%;
     width: 40%;

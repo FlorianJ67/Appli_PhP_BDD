@@ -68,7 +68,7 @@
                         </tbody>
                     </table>";
 
-                    echo "<a href='traitement.php?action=viderPanier'>Vider le panier</a>";
+                    echo "<a  id='deleteTab' href='traitement.php?action=viderPanier'>Vider le panier</a>";
                 }
                 ?>
 
