@@ -23,10 +23,11 @@
                     <li>
                         <a href="recap.php">Récap</a>
                     </li>
-                    <li>
-                        <p id="shoppingCart"><i class="fa fa-shopping-cart" <?php if(nbProduits() == null || nbProduits() == 0){echo "style= 'display: none'"; } ?>></i><?= nbProduits() ?></p>
-                    </li>
                 </ul>
+                <div>
+                    <i class="fa fa-shopping-cart" <?php if(nbProduits() == null || nbProduits() == 0){echo "style= 'display: none'"; } ?>></i>
+                    <p id="shoppingCart" <?php if(nbProduits() == null || nbProduits() == 0){echo "style= 'display: none'"; } ?>><?= nbProduits() ?></p>
+                </div>
             </nav>
         </header>
         <main>
@@ -56,7 +57,7 @@
                                 <td>". $index ."</td>
                                 <td>". $product['name'] ."</td>
                                 <td>". number_format($product['price'], 2, ",", "&nbsp;") ."&nbsp;€</td>
-                                <td><div><a href='traitement.php?action=downQty&id=$index' class='qttmod'>-</a><p>". $product['qtt'] ."</p><a href='traitement.php?action=upQty&id=$index' class='qttmod'>+</a></td>
+                                <td><div><a href='traitement.php?action=downQty&id=$index' class='qttMod'>-</a><p>". $product['qtt'] ."</p><a href='traitement.php?action=upQty&id=$index' class='qttMod'>+</a></td>
                                 <td><div><p>". number_format($product['total'], 2, ",", "&nbsp;") ."&nbsp;€  </p><a href='traitement.php?action=suppProduit&id=$index' class='removeBtn' ><i class='fa fa-trash-o'></i></a></div></td>
                             </tr>";
                         $totalGeneral += $product['total'];

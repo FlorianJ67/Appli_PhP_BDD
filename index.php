@@ -26,10 +26,11 @@
                     <li>
                         <a href="recap.php">Récap</a>
                     </li>
-                    <li>
-                        <p id="shoppingCart"><i class="fa fa-shopping-cart" <?php if(nbProduits() == null || nbProduits() == 0){echo "style= 'display: none'"; } ?>></i><?= nbProduits() ?></p>
-                    </li>
                 </ul>
+                <div>
+                    <i class="fa fa-shopping-cart" <?php if(nbProduits() == null || nbProduits() == 0){echo "style= 'display: none'"; } ?>></i>
+                    <p id="shoppingCart" <?php if(nbProduits() == null || nbProduits() == 0){echo "style= 'display: none'"; } ?>><?= nbProduits() ?></p>
+                </div>
             </nav>
         </header>
 <div id="createProduct">
