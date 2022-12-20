@@ -16,18 +16,21 @@
     <body>
         <header>
             <nav>
+                <a href="index.php">
+                    <i class="fa fa-home"></i>
+                </a>
                 <ul>
                     <li>
-                        <a href="index.php">Index</a>
+                        <a href="index.php">INDEX</a>
                     </li>
                     <li>
-                        <a href="recap.php">Récap</a>
+                        <a href="recap.php">RÉCAP</a>
                     </li>
                 </ul>
-                <div>
-                    <i class="fa fa-shopping-cart" <?php if(nbProduits() == null || nbProduits() == 0){echo "style= 'display: none'"; } ?>></i>
-                    <p id="shoppingCart" <?php if(nbProduits() == null || nbProduits() == 0){echo "style= 'display: none'"; } ?>><?= nbProduits() ?></p>
-                </div>
+                <a href="recap.php" <?php if(nbProduits() == null || nbProduits() == 0){echo "style= 'display: none'"; } ?>>
+                    <i class="fa fa-shopping-cart"></i>
+                    <p id="shoppingCart"><?= nbProduits() ?></p>
+                </a>
             </nav>
         </header>
         <main>
@@ -55,7 +58,7 @@
 
                         echo "<tr>
                                 <td>". $index ."</td>
-                                <td>". $product['name'] ."</td>
+                                <td>". ucfirst($product['name']) ."</td>
                                 <td>". number_format($product['price'], 2, ",", "&nbsp;") ."&nbsp;€</td>
                                 <td><div><a href='traitement.php?action=downQty&id=$index' class='qttMod'>-</a><p>". $product['qtt'] ."</p><a href='traitement.php?action=upQty&id=$index' class='qttMod'>+</a></td>
                                 <td><div><p>". number_format($product['total'], 2, ",", "&nbsp;") ."&nbsp;€  </p><a href='traitement.php?action=suppProduit&id=$index' class='removeBtn' ><i class='fa fa-trash-o'></i></a></div></td>
