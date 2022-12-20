@@ -10,8 +10,9 @@ html {
 }
 
 /* variable to use the same property*/
-element {
+:root {
     --hover-color: rgb(214, 212, 212);
+    --darkTheme-color:#222;
 }
 
 /*Nav*/
@@ -44,6 +45,26 @@ nav ul li:hover{
     border-radius: 45px;
     box-shadow: 3px 5px 25px 0 rgb(0 0 0 / 10%);
 }
+/* panier */
+header div .fa {
+    font-size: 180%;
+}
+/* number of article */
+#shoppingCart {
+    position: absolute;
+    top: 5px;
+    right: 36px;
+    width: 20px;
+    height: 20px;
+    background-color: #3587cf;
+    color: white;
+    border-radius: 45px;
+    text-align: center;
+    font-size: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* main */
 #container {
@@ -72,46 +93,31 @@ nav ul li:hover{
 
 /*Tableau*/
 table, th, td {
-    border: 1px solid;
     height: 40px;
     text-align: center;
 }
-table tr:nth-child(even) {
-    background-color: rgb(236, 236, 236);
-}
-table tbody tr:last-child{
-    background-color: white;
-    font-size: 140%;
-}
 table {
-    border: 3px solid;
+    background-color: var(--darkTheme-color);
     margin-top: 10px;
     border-collapse: collapse;
-    width: 40%;
+    width: 45%;
     box-shadow: 3px 5px 25px 0 rgb(0 0 0 / 10%);
 }
 thead {
-    border: 2px solid;
+    border-bottom: 1.5px solid;
 }
-header div .fa {
-    font-size: 180%;
+th,td,td strong,td div p{
+    color: rgb(194, 194, 194);
 }
-#shoppingCart {
-    position: absolute;
-    top: 5px;
-    right: 36px;
-    width: 20px;
-    height: 20px;
-    background-color: #3587cf;
-    color: white;
-    border-radius: 45px;
-    text-align: center;
-    font-size: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+table tr:nth-child(even) {
+    filter: brightness(140%);
 }
-/*+ and - button on tab*/
+table tbody tr:last-child{
+    border-top: 1.5px solid;
+    font-size: 140%;
+}
+
+/* + and - button on tab*/
 td:nth-child(4) div{
     display: flex;
     align-items: center;
