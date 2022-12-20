@@ -17,12 +17,12 @@ html {
 /* --- header --- */
 /*Nav*/
 nav {
+    position: relative;
     height: 4vh;
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 nav ul{
     display: flex;
@@ -43,6 +43,13 @@ nav ul li a {
 nav ul li:hover a, nav a:hover .fa{
     color: #3587cf;
     transition: 0.3s;
+}
+nav a:hover #shoppingCart{
+    background-color: #000000;
+    transition: 0.2s;
+}
+nav ul li a,nav a .fa,nav a #shoppingCart{
+    transition: 0.7s;
 }
 /* number of article */
 #shoppingCart {
@@ -67,8 +74,7 @@ header a .fa {
 
 /* --- main --- */
 #container {
-    background: rgb(116, 245, 228);
-    background: linear-gradient(159deg, rgba(70,226,252,1) 0%, rgba(131,182,182,1) 99%);
+    background: rgb(255, 255, 255);
     height: 96vh;
     display: flex;
     flex-direction: column;
@@ -86,7 +92,7 @@ table {
     border-radius: 5px;
     border-collapse: collapse;
     width: 45%;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 table thead tr th:first-child {
     width: 10%;
@@ -186,14 +192,17 @@ table tbody tr:last-child td {
     margin: 1.5%;
     width: 40%;
     height: 300px;
-    background-color: rgb(203 226 237 / 48%);
+    background-color: rgba(174, 174, 174, 0.084);
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding: 12px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+#createProduct h1:hover {
+    color: #3587cf;
 }
 form {
     display: flex;
@@ -205,14 +214,13 @@ form p {
     font-weight: bold;
 }
 form p:hover label{
-    color: white;
+    color: #3587cf;
     transition: 0.3s;
 }
 form input {
     height: 140%;
     border: none;
     border-radius: 3px;
-    box-shadow: 3px 5px 25px 0 rgb(0 0 0 / 10%);
     -webkit-appearance: none;
     text-indent: 5%;
 }

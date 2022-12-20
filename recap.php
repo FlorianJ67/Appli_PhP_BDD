@@ -37,9 +37,10 @@
             <div id="container">
 
                 <?php 
+                // If: no product on tab display "error message"
                 if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
                     echo "<div class='message'><p>Aucun produit en session...</p></div>";
-                }
+                } // Else: create the table
                 else {
                     echo "<table>
                     <thead>

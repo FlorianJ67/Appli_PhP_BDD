@@ -34,7 +34,7 @@
 
                 } else {
                     // stock an error message to display when it failed to submit
-                    $_SESSION['message'] = "<div class='message' ><p class='error'>Le produit n'a pas pu être ajouté</p></div>";
+                    $_SESSION['message'] = "<div class='message' ><p class='error'>Le produit ". ucfirst($name) ." n'a pas pu être ajouté</p></div>";
                 }
             } 
         
