@@ -35,6 +35,14 @@
                 } else {
                     // stock an error message to display when it failed to submit
                     $_SESSION['message'] = "<div class='message' ><p class='error'>Le produit ". ucfirst($name) ." n'a pas pu être ajouté</p></div>";
+                    if (!$name){
+                        //make the name input background red if null
+                        $_SESSION['message'] .= "<style>form p:first-child label input{background-color:var(--redError);}</style>";
+                    } 
+                    if (!$price){
+                        //make the price input background red if null
+                        $_SESSION['message'] .= "<style>form p:nth-child(2) label input{background-color:var(--redError);}</style>";
+                    } 
                 }
             } 
         

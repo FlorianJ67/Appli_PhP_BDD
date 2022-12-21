@@ -125,6 +125,9 @@ table tr:nth-child(even) .qttMod {
     background-color: var(--colorTwo);
     color: var(--colorOne);
 }
+table tr:nth-child(even) .qttMod:hover {
+    color: black;
+}
 table tr:nth-child(even) .removeBtn i {
     color: var(--colorTwo);
 }
@@ -169,14 +172,15 @@ td:nth-child(4) div{
     color: var(--colorTwo);
     text-decoration: none;
 }
+.qttMod:hover {
+    color: black;
+}
+
 /* qttMod "+" */
 td:nth-child(4) div a:last-child {
     line-height: 65%;
 }
 
-.qttMod:hover {
-    color: var(--colorOne);
-}
 /*price + remove button*/
 td:nth-child(5) div {
     display: flex;
@@ -234,6 +238,7 @@ form p:hover label{
     transition: 0.3s;
 }
 form input {
+    background-color: var(--colorOne);
     height: 140%;
     border: none;
     border-radius: 3px;
