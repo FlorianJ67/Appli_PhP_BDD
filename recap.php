@@ -41,7 +41,7 @@
                 if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
                     echo "<div class='message'><p>Aucun produit en session...</p></div>";
                 } // Else: create the table
-                else {
+                else if (isset($_SESSION['products'])){
                     echo "<table>
                     <thead>
                     <tr>
@@ -75,6 +75,12 @@
 
                     echo "<a  id='deleteTab' href='traitement.php?action=viderPanier'>Vider le panier</a>";
                 }
+                // display error message
+                if(isset($_SESSION['message'])) {
+                    echo $_SESSION['message'];
+                    unset($_SESSION['message']);
+                } 
+
                 ?>
 
             </div>

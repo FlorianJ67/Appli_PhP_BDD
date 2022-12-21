@@ -44,6 +44,7 @@
         // Clear all
         case "viderPanier":
             unset($_SESSION["products"]);
+            $_SESSION['message'] = "<div class='message' ><p class='error'>L'ensemble panier a été supprimer</p></div>";
             header("Location:recap.php");die;
             break;
         
@@ -62,6 +63,7 @@
             $_SESSION["products"][$_GET["id"]]["total"] = $_SESSION["products"][$_GET["id"]]["qtt"]*$_SESSION["products"][$_GET["id"]]["price"];
             // if quantity = 0 ; delete the article
             if($_SESSION["products"][$_GET["id"]]["qtt"] < 1){
+                $_SESSION['message'] = "<div class='message' ><p class='error'>Le produit ". $_SESSION["products"][$_GET["id"]]["name"] ." a été retiré de la liste</p></div>";
                 unset($_SESSION["products"][$_GET["id"]]);
             }
             header("Location:recap.php");die;
@@ -69,6 +71,7 @@
 
         // Delete 1 product
         case "suppProduit":
+            $_SESSION['message'] = "<div class='message' ><p class='error'>Le produit ". $_SESSION["products"][$_GET["id"]]["name"] ." a été retiré de la liste</p></div>";
             unset($_SESSION["products"][$_GET["id"]]);
             header("Location:recap.php");die;
             break;
