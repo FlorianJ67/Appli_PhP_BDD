@@ -32,7 +32,7 @@
                 </ul>
                 <a href="recap.php" <?php if(nbProduits() == null || nbProduits() == 0){echo "style= 'display: none'"; } ?>>
                     <i class="fa fa-shopping-cart"></i>
-                    <p id="shoppingCart"><?= nbProduits() ?></p>
+                    <p id="shoppingCart"><?=nbProduits()?></p>
                 </a>
             </nav>
         </header>

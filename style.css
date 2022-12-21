@@ -11,10 +11,12 @@ html {
 
 /* --- variable to use the same property ---*/
 :root {
-    --colorOne: rgb(212, 212, 212);
+    --colorOne:rgb(212, 212, 212);
     --colorTwo:rgb(246, 246, 246);
     --redError:rgb(202, 45, 45);
 }
+
+
 /*~~HEADER~~*/
 /*Nav*/
 nav {
@@ -48,11 +50,15 @@ nav ul li:hover a, nav a:hover .fa{
 nav ul li a,nav a .fa,nav a #shoppingCart{
     transition: 0.2s;
 }
+
+nav a:last-child{
+    position: relative;
+}
 /* number of article */
 #shoppingCart {
     position: absolute;
-    top: 1px;
-    right: 49px;
+    top: 0px;
+    right: -11px;
     width: 20px;
     height: 20px;
     background-color: #3587cf;
@@ -68,8 +74,10 @@ nav ul li a,nav a .fa,nav a #shoppingCart{
 header a .fa {
     font-size: 180%;
 }
+/*~~/HEADER~~*/
 
-/* --- main --- */
+
+/*~~MAIN~~*/
 #container {
     background: rgb(255, 255, 255);
     height: 96vh;
@@ -77,9 +85,63 @@ header a .fa {
     flex-direction: column;
     align-items: center;
 }
-/*~~/HEADER~~*/
 
-/*~~~~*/
+
+/*~~INDEX~~*/
+/*Form Product*/
+#createProduct {
+    margin: 1.5%;
+    width: 40%;
+    height: 300px;
+    background-color: rgba(174, 174, 174, 0.084);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+#createProduct h1:hover {
+    color: #3587cf;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+form p {
+    margin-top: 20px;
+    font-weight: bold;
+}
+form p:hover label{
+    color: #3587cf;
+    transition: 0.3s;
+}
+form input {
+    background-color: var(--colorOne);
+    height: 140%;
+    border: none;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    text-indent: 5%;
+}
+/* submit button*/
+form p:last-child input:last-child {
+    background-color: var(--colorOne);
+    width: 130px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-indent: 0;
+}
+form p:last-child:hover input:last-child {
+    color: #3587cf;
+    cursor: pointer;
+}
+/*~~/INDEX~~*/
+
+
+/*~~RECAP~~*/
 /*Tableau*/
 table, th, td {
     height: 40px;
@@ -181,7 +243,7 @@ td:nth-child(4) div a:last-child {
     line-height: 65%;
 }
 
-/*price + remove button*/
+/*price & remove button*/
 td:nth-child(5) div {
     display: flex;
     align-items: center;
@@ -203,63 +265,12 @@ td:nth-child(5) div p {
 .removeBtn:hover i {
     color: var(--redError);
 }
-
-
-
-/*~~INDEX~~*/
-/*Form Product*/
-#createProduct {
-    margin: 1.5%;
-    width: 40%;
-    height: 300px;
-    background-color: rgba(174, 174, 174, 0.084);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 12px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-}
-#createProduct h1:hover {
-    color: #3587cf;
-}
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-form p {
-    margin-top: 20px;
-    font-weight: bold;
-}
-form p:hover label{
-    color: #3587cf;
-    transition: 0.3s;
-}
-form input {
-    background-color: var(--colorOne);
-    height: 140%;
-    border: none;
-    border-radius: 3px;
-    -webkit-appearance: none;
-    text-indent: 5%;
-}
-/* submit button*/
-form p:last-child input:last-child {
-    background-color: var(--colorOne);
-    width: 130px;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    text-indent: 0;
-}
-form p:last-child:hover input:last-child {
-    color: #3587cf;
-}
-/*~~/INDEX~~*/
+/*~~/RECAP~~*/
 
 /* message displayer */
 .message {
+    position: relative;
+    animation: slideFromTop 1s forwards;
     margin: 1.5%;
     width: 40%;
     height: 70px;
@@ -276,4 +287,16 @@ form p:last-child:hover input:last-child {
 .error {
     color: var(--redError);
     font-weight: bold;
+}
+
+/* animation for message window */ 
+@keyframes slideFromTop {
+    0% {
+        top: -8%;
+        opacity: 0%;
+    }
+    100% {
+        top: 0;
+        opacity: 100%;
+    }
 }
