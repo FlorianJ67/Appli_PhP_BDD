@@ -112,6 +112,8 @@ td:nth-child(4) div{
     justify-content: space-evenly;
 }
 .qttMod {
+    line-height: 75%;
+    font-size: xx-large;
     border-radius: 25px;
     height: 22px;
     width: 22px;
@@ -124,13 +126,16 @@ td:nth-child(4) div{
 .qttMod:hover {
     color: var(--colorOne);
 }
-/*remove button*/
+/*price + remove button*/
 td:nth-child(5) div {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-left: 10%;
     margin-right: 5%;
+}
+td:nth-child(5) div p {
+    margin-right: 7%;
 }
 .removeBtn {
     border-radius: 25px;
@@ -187,6 +192,7 @@ table tbody tr:last-child td {
     transform: scale(1.2);
 }
 
+/*~~INDEX~~*/
 /*Form Product*/
 #createProduct {
     margin: 1.5%;
@@ -226,7 +232,7 @@ form input {
 }
 /* submit button*/
 form p:last-child input:last-child {
-    background-color: var(--colorTwo);
+    background-color: var(--colorOne);
     width: 130px;
     color: rgb(0, 0, 0);
     font-weight: bold;
@@ -235,13 +241,14 @@ form p:last-child input:last-child {
 form p:last-child:hover input:last-child {
     color: #3587cf;
 }
+/*~~/INDEX~~*/
 
 /* message displayer */
 .message {
     margin: 1.5%;
     width: 40%;
     height: 70px;
-    background-color: var(--colorOne);
+    background-color: rgba(174, 174, 174, 0.084);
     border-radius: 4px;
     font-style: italic;
     display: flex;
@@ -252,6 +259,6 @@ form p:last-child:hover input:last-child {
     box-shadow: 3px 5px 25px 0 rgb(0 0 0 / 10%);
 }
 .error {
-    color: rgb(255, 137, 137);
+    color: rgb(206, 16, 16);
     font-weight: bold;
 }
