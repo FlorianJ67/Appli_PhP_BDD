@@ -90,8 +90,13 @@ switch ($_GET["action"]) {
 		break;
 
 	case "addToCart":
-		$_SESSION['products'][] = findOneById($_GET['id']);
-		header("Location:product.php/id=" . $product[$_GET['id']]);
+		if (isset($_SESSION['products'])) {
+		}
+		$product = findOneById($_GET['id']);
+		$product['qtt'] = 1;
+		$product['total'] = $product['price'];
+		$_SESSION["products"] []= $product;
+		header("Location:recap.php");
 		die;
 		break;
 }
