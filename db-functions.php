@@ -48,7 +48,7 @@ function findOneById($id)
 
 	$storeStatement = $db->prepare($sqlQuery);
 
-	$storeStatement->execute([':id'=>$id]);
+	$storeStatement->execute([':id' => $id]);
 
 	$store = $storeStatement->fetch();
 
@@ -66,9 +66,9 @@ function insertProduct($name, $price, $description)
 
 	$storeStatement = $db->prepare($sqlQuery);
 
-	$storeStatement->execute([	':name'=>$name,
-								':price' =>$price,
-								':description'=>$description
-							]);
-
+	$storeStatement->execute([
+		':name' => $name,
+		':price' => $price,
+		':description' => $description
+	]);
 }
