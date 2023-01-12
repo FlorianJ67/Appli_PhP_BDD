@@ -61,7 +61,6 @@ include "functions.php";
 
 				$totalGeneral = 0;
 				foreach ($_SESSION['products'] as $index => $product) {
-
 					echo "<tr>
                                 <td>" . $index . "</td>
                                 <td>" . ucfirst($product['name']) . "</td>

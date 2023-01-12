@@ -91,11 +91,17 @@ switch ($_GET["action"]) {
 
 	case "addToCart":
 		if (isset($_SESSION['products'])) {
+			foreach ($_SESSION['products'] as $index => $product) {
+				if ($product['id'] == $_GET['id']) {
+					header("Location:traitement.php?action=upQty&id=" . $index);
+					die;
+				}
+			}
 		}
 		$product = findOneById($_GET['id']);
 		$product['qtt'] = 1;
 		$product['total'] = $product['price'];
-		$_SESSION["products"] []= $product;
+		$_SESSION["products"][] = $product;
 		header("Location:recap.php");
 		die;
 		break;
