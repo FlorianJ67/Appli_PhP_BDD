@@ -19,8 +19,8 @@ USE `store_fj`;
 -- Listage de la structure de la table store_fj. product
 CREATE TABLE IF NOT EXISTS `product` (
   `id` int(11) NOT NULL,
-  `nom` varchar(50) NOT NULL,
-  `prix` float NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `price` float NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

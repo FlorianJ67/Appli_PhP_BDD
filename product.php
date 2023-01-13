@@ -43,16 +43,27 @@ $product = findOneById($_GET['id']);
 	<main>
 		<div id="container">
 			<article id="productFocus">
+				<div id="productIMG">
+					<img src="<?= $product['img'] ?>" alt="">
+				</div>
 				<div id="productInfo">
-					<a href="index.php">Retour</a>
+					
+					<h1><?= ucFirst($product['name']) ?></h1>
+					
+					<p id="productPrice"><?= $product['price'] ?> €</p>
+					
+					<p class='description'><?= $product['description'] ?></p>
+					
+					<div id="actionProduct">
 
-					<h1><?= $product['name'] ?></h1>
-
-					<p class='description'><?= $product['name'] ?></p>
-
-					<p id="productPrice"><?= $product['price'] ?></p>
-
-					<a href="traitement.php?action=addToCart&id=<?= $_GET['id'] ?>">Ajouter un produit</a>
+						<a href="index.php">Retour</a>
+						
+						<div>
+						<i class="fa fa-shopping-cart"></i>
+							<a href="traitement.php?action=addToCart&id=<?= $_GET['id'] ?>">Ajouter un produit</a>
+							
+						</div>
+					</div>
 				</div>
 
 			</article>

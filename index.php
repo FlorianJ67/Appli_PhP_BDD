@@ -40,22 +40,27 @@ $store = findAll();
 			</a>
 		</nav>
 	</header>
-</body>
-<?php
+	<div id="container">
+
+		<?php
 // On affiche chaques produits un a un
 
 foreach ($store as $product) {
-
-?>
-
+	
+	?>
+<article classe='productListItem'>
+	
 	<a href='product.php?id=<?= $product['id'] ?>'><?= $product['name']; ?></a>
-
+	
 	<p><?= $product['price']; ?></p>
-
+	
 	<p><?= custom_echo($product['description'], 50); ?></p>
+</article>
 
 <?php
 
 }
 
 ?>
+</div>
+</body>

@@ -68,7 +68,7 @@ nav a:last-child {
 	right: -11px;
 	width: 20px;
 	height: 20px;
-	background-color: #3587cf;
+	background-color: var(--greenOne);
 	color: white;
 	border-radius: 45px;
 	text-align: center;
@@ -341,13 +341,72 @@ td:nth-child(5) div p {
 /*~~PRODUCT~~*/
 #productFocus {
 	width: 70%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#productIMG {
+	width: 40%;
+}
+#productIMG img{
+	width: 100%;
 }
 
 #productInfo {
+	width: 55%;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	padding: 10px;
+}
+#productInfo h1 {
+	color: #071c1f;
 }
 
 #productPrice {
 	color: var(--greenOne);
+	font-size: 45px;
+    font-weight: bold;
+}
+
+#actionProduct {
+	display: flex;
+    justify-content: flex-end;
+}
+#actionProduct a, #actionProduct div {
+	text-decoration: none;
+    color: white;
+    padding-left: 15px;
+	padding-right: 15px;
+    font-weight: bold;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#actionProduct a:first-child {
+	background-color: brown;
+}
+#actionProduct div {
+	background-color: var(--greenOne);
+	margin-left: 15px;
+}
+#actionProduct div:hover {
+	background-position: 200%;
+}
+#actionProduct div i {
+	color: white;
+	padding-left: 15px;
+}
+#actionProduct div a {
+	background-color: none;
+	padding-left: 5px;
+	padding-right: 15px;
+}
+
+/**/
+.productListItem {
+	height: 30vh;
+	width: 25vh;
 }
