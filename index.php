@@ -21,9 +21,28 @@ $store = findAll();
 <body>
 	<header>
 		<nav>
-			<a href="index.php">
-				<i class="fa fa-home"></i>
-			</a>
+			<div id="home">
+				<a href="index.php">
+					<i class="fa fa-home"></i>
+				</a>
+				<div id="searchBar">
+					<input type="search" id="site-search" name="q">
+					<button>Recherche</button>
+				</div>
+				<!--
+					$search_keyword = '';
+					if(!empty($_POST['search']['keyword'])) {
+						$search_keyword = $_POST['search']['keyword'];
+					}
+					$sql = 'SELECT * FROM posts WHERE name LIKE :keyword OR description LIKE :keyword ORDER BY id DESC ';
+					...
+					...
+					$pdo_statement = $pdo_conn->prepare($query);
+					$pdo_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
+					$pdo_statement->execute();
+					$result = $pdo_statement->fetchAll();
+				-->
+			</div>
 			<ul>
 				<li>
 					<a href="index.php">INDEX</a>
@@ -50,8 +69,11 @@ foreach ($store as $product) {
 	
 	?>
 <article class='productListItem'>
-	
-	<a href='product.php?id=<?= $product['id'] ?>'><img src="<?= $product['img'] ?>" alt=""></a>
+	<div class="quickMenuItem">
+		<a href="product.php?id=<?= $product['id'] ?>"><i class="fa fa-eye"></i></a>
+		<a href="traitement.php?action=addToCart&id=<?= $product['id'] ?>"><i class="fa fa-shopping-cart"></i></a>
+	</div>
+	<a class='productIMG' href='product.php?id=<?= $product['id'] ?>'><img src="<?= $product['img'] ?>" alt=""></a>
 	
 	<a href='product.php?id=<?= $product['id'] ?>'><?= ucFirst($product['name']) ?></a>
 	

@@ -30,7 +30,20 @@ nav {
 	align-items: center;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
+nav #home{
+	display: flex;
+    flex-direction: row;
+}
+nav #home input:focus{
+	outline: var(--greenOne);
+}
+nav #home a{
+	margin-right: 10px;
+}
 
+nav #searchBar {
+	display: flex;
+}
 nav ul {
 	display: flex;
 	justify-content: space-around;
@@ -38,7 +51,7 @@ nav ul {
 	list-style-type: none;
 	border-left: 2px solid var(--colorTwo);
 	height: 100%;
-	width: 85%;
+	width: 80%;
 }
 
 nav ul li {
@@ -51,7 +64,7 @@ nav ul li a {
 }
 
 nav ul li:hover a, nav a:hover .fa {
-	color: #265279;
+	color: var(--greenOne);
 	transition: 0.3s;
 }
 
@@ -115,7 +128,7 @@ header a .fa {
 }
 
 #createProduct h1:hover {
-	color: #3587cf;
+	color: var(--greenOne)
 }
 
 form {
@@ -130,7 +143,7 @@ form p {
 }
 
 form p:hover label {
-	color: #3587cf;
+	color: var(--greenOne);
 	transition: 0.3s;
 }
 
@@ -153,7 +166,7 @@ form p:last-child input:last-child {
 }
 
 form p:last-child:hover input:last-child {
-	color: #3587cf;
+	color: var(--greenOne);
 	cursor: pointer;
 }
 
@@ -343,6 +356,7 @@ td:nth-child(5) div p {
 /*~~PRODUCT~~*/
 #productFocus {
 	width: 70%;
+	margin-top: 15px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -352,6 +366,8 @@ td:nth-child(5) div p {
 }
 #productIMG img{
 	width: 100%;
+	max-height: 400px;
+    object-fit: cover;
 }
 
 #productInfo {
@@ -388,11 +404,30 @@ td:nth-child(5) div p {
 }
 #actionProduct a:first-child {
 	background-color: brown;
+	border: brown 2px solid;
+	transition: 0.2s;
+}
+#actionProduct a:first-child:hover {
+	background-color: rgb(255, 255, 255);
+	color: #071c1f;
+	border: #071c1f 2px solid;
+	transition: 0.6s;
 }
 #actionProduct div {
 	background-color: var(--greenOne);
 	margin-left: 15px;
+	border: var(--greenOne) 2px solid;
+	transition: 0.2s;
 }
+#actionProduct div:hover {
+	background-color: white;
+	border: #071c1f 2px solid;
+	transition: 0.6s;
+}
+#actionProduct div:hover a, #actionProduct div:hover i {
+	color: #071c1f;
+}
+
 #actionProduct div:hover {
 	background-position: 200%;
 }
@@ -406,7 +441,7 @@ td:nth-child(5) div p {
 	padding-right: 15px;
 }
 
-/**/
+/*~~INDEX~~*/
 #listItem {
 	display: flex;
     flex-wrap: wrap;
@@ -421,7 +456,14 @@ td:nth-child(5) div p {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-	transition: 0.2s;
+	transition: 0.5s;
+}
+.productListItem a:nth-child(2) {
+	transition: 0.5s;
+}
+.productListItem a:nth-child(2):hover {
+	color: var(--greenOne);
+	transition: 0.5s;
 }
 .productListItem p:last-child {
 	padding-bottom: 10px;
@@ -430,7 +472,8 @@ td:nth-child(5) div p {
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 	transition: 0.8s;
 }
-.productListItem a:first-child {
+/* Target the 'img' inside the 'a' */
+.productListItem .productIMG {
 	height: 80%;
 	width: 100%;
 	object-fit: cover;
@@ -442,4 +485,44 @@ td:nth-child(5) div p {
 }
 .productPrice {
 	color: var(--greenOne);
+}
+/*  */
+.quickMenuItem {
+	position: relative;
+	width: 100%;
+    top: 21vh;
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+	transition: 0.5s;
+}
+.quickMenuItem a {
+	opacity: 0;
+	margin: 0 10px;
+	background-color: white;
+	border-radius: 45px;
+	height: 40px;
+    width: 40px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	transition: 0.5s;
+}
+.quickMenuItem a:hover {
+	background-color: var(--greenOne);
+	transition: 0.5s;
+}
+.quickMenuItem a:hover i{
+	opacity: 1;
+	color: white;
+	transition: 0.5s;
+}
+.productListItem:hover .quickMenuItem a{
+	opacity: 1;
+	transition: 0.5s;
+}
+.productListItem:hover .quickMenuItem {
+	opacity: 1;
+	top: 25vh;
+	transition: 0.5s;
 }
