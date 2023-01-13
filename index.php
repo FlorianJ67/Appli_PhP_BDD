@@ -15,7 +15,7 @@ $store = findAll();
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<title>Magasin Retro</title>
+	<title>Techno furri dubstep</title>
 </head>
 
 <body>
@@ -25,10 +25,10 @@ $store = findAll();
 				<a href="index.php">
 					<i class="fa fa-home"></i>
 				</a>
-				<div id="searchBar">
+				<form id="searchBar">
 					<input type="search" id="site-search" name="q">
-					<button>Recherche</button>
-				</div>
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
 				<!--
 					$search_keyword = '';
 					if(!empty($_POST['search']['keyword'])) {

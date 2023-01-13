@@ -44,7 +44,7 @@ include "functions.php";
 		<div id="createProduct">
 
 			<h1>Ajouter un produit</h1>
-			<form action="traitement.php?action=ajouterProduit" method="post">
+			<form id="addProductToDB" action="traitement.php?action=ajouterProduit" method="post">
 				<p>
 					<label>
 						Nom du produit :

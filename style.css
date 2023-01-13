@@ -4,9 +4,18 @@
 	box-sizing: border-box;
 	color: rgb(0, 0, 0);
 }
+/* remove the X from input bar */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	 display: none; 
+	}
+
 a {
 	text-decoration: none;
 }
+
 html {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -17,6 +26,7 @@ html {
 	--colorTwo: rgb(246, 246, 246);
 	--redError: rgb(202, 45, 45);
 	--greenOne: #80b500;
+	--animationTime: 0.3s;
 }
 
 
@@ -34,11 +44,35 @@ nav #home{
 	display: flex;
     flex-direction: row;
 }
-nav #home input:focus{
-	outline: var(--greenOne);
+nav #home input {
+	border: 2px solid #e4ecf2;
+	transition: 0.7s;
+}
+nav #home #searchBar input:focus{
+	outline: none;
+	border-color: var(--greenOne);
+	transition: 0.7s;
+}
+nav #home #searchBar button:hover i, nav #home #searchBar button i {
+	transition: var(--animationTime);
+}
+nav #home #searchBar button:hover i{
+	color: var(--greenOne);
+	transform: scale(1.34);
 }
 nav #home a{
 	margin-right: 10px;
+}
+nav #home {
+	position: relative;
+    right: -20px;
+}
+nav #home button {
+	position: relative;
+    right: 30px;
+	width: 30px;
+	border: none;
+    background: none;
 }
 
 nav #searchBar {
@@ -131,23 +165,23 @@ header a .fa {
 	color: var(--greenOne)
 }
 
-form {
+#addProductToDB {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
 }
 
-form p {
+#addProductToDB p {
 	margin-top: 20px;
 	font-weight: bold;
 }
 
-form p:hover label {
+#addProductToDB p:hover label {
 	color: var(--greenOne);
 	transition: 0.3s;
 }
 
-form input {
+#addProductToDB input {
 	background-color: var(--colorOne);
 	height: 140%;
 	border: none;
@@ -157,7 +191,7 @@ form input {
 }
 
 /* submit button*/
-form p:last-child input:last-child {
+#addProductToDB p:last-child input:last-child {
 	background-color: var(--colorOne);
 	width: 130px;
 	color: rgb(0, 0, 0);
@@ -165,7 +199,7 @@ form p:last-child input:last-child {
 	text-indent: 0;
 }
 
-form p:last-child:hover input:last-child {
+#addProductToDB p:last-child:hover input:last-child {
 	color: var(--greenOne);
 	cursor: pointer;
 }
@@ -448,7 +482,7 @@ td:nth-child(5) div p {
     justify-content: center;
 }
 .productListItem {
-	height: 40vh;
+	height: 45vh;
 	width: 30vh;
 	margin: 15px;
 	font-weight: bold;
@@ -456,14 +490,17 @@ td:nth-child(5) div p {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-	transition: 0.5s;
+	transition: var(--animationTime);
+}
+.productListItem a:nth-child(3) {
+	padding: 10px;
 }
 .productListItem a:nth-child(2) {
-	transition: 0.5s;
+	transition: var(--animationTime);
 }
 .productListItem a:nth-child(2):hover {
 	color: var(--greenOne);
-	transition: 0.5s;
+	transition: var(--animationTime);
 }
 .productListItem p:last-child {
 	padding-bottom: 10px;
@@ -494,7 +531,7 @@ td:nth-child(5) div p {
 	display: flex;
     flex-direction: row;
     justify-content: center;
-	transition: 0.5s;
+	transition: var(--animationTime);
 }
 .quickMenuItem a {
 	opacity: 0;
@@ -506,23 +543,23 @@ td:nth-child(5) div p {
 	display: flex;
     justify-content: center;
     align-items: center;
-	transition: 0.5s;
+	transition: var(--animationTime);
 }
 .quickMenuItem a:hover {
 	background-color: var(--greenOne);
-	transition: 0.5s;
+	transition: var(--animationTime);
 }
 .quickMenuItem a:hover i{
 	opacity: 1;
 	color: white;
-	transition: 0.5s;
+	transition: var(--animationTime);
 }
 .productListItem:hover .quickMenuItem a{
 	opacity: 1;
-	transition: 0.5s;
+	transition: var(--animationTime);
 }
 .productListItem:hover .quickMenuItem {
 	opacity: 1;
 	top: 25vh;
-	transition: 0.5s;
+	transition: var(--animationTime);
 }
