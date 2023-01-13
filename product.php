@@ -52,7 +52,7 @@ $product = findOneById($_GET['id']);
 					
 					<p id="productPrice"><?= $product['price'] ?> €</p>
 					
-					<p class='description'><?= $product['description'] ?></p>
+					<p class='description'><?= ucFirst($product['description']) ?></p>
 					
 					<div id="actionProduct">
 

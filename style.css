@@ -4,7 +4,9 @@
 	box-sizing: border-box;
 	color: rgb(0, 0, 0);
 }
-
+a {
+	text-decoration: none;
+}
 html {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -374,7 +376,6 @@ td:nth-child(5) div p {
     justify-content: flex-end;
 }
 #actionProduct a, #actionProduct div {
-	text-decoration: none;
     color: white;
     padding-left: 15px;
 	padding-right: 15px;
@@ -406,7 +407,39 @@ td:nth-child(5) div p {
 }
 
 /**/
+#listItem {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .productListItem {
-	height: 30vh;
-	width: 25vh;
+	height: 40vh;
+	width: 30vh;
+	margin: 15px;
+	font-weight: bold;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+	transition: 0.2s;
+}
+.productListItem p:last-child {
+	padding-bottom: 10px;
+}
+.productListItem:hover {
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+	transition: 0.8s;
+}
+.productListItem a:first-child {
+	height: 80%;
+	width: 100%;
+	object-fit: cover;
+    overflow: hidden;
+}
+.productListItem a img {
+	width: 100%;
+
+}
+.productPrice {
+	color: var(--greenOne);
 }

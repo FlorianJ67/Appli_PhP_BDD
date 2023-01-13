@@ -41,20 +41,22 @@ $store = findAll();
 		</nav>
 	</header>
 	<div id="container">
+<div id="listItem">
 
-		<?php
-// On affiche chaques produits un a un
+	<?php
+// On affiche chaques produits un à un
 
 foreach ($store as $product) {
 	
 	?>
-<article classe='productListItem'>
+<article class='productListItem'>
 	
-	<a href='product.php?id=<?= $product['id'] ?>'><?= $product['name']; ?></a>
+	<a href='product.php?id=<?= $product['id'] ?>'><img src="<?= $product['img'] ?>" alt=""></a>
 	
-	<p><?= $product['price']; ?></p>
+	<a href='product.php?id=<?= $product['id'] ?>'><?= ucFirst($product['name']) ?></a>
 	
-	<p><?= custom_echo($product['description'], 50); ?></p>
+	<p class='productPrice'><?= $product['price']; ?>€</p>
+	
 </article>
 
 <?php
@@ -62,5 +64,6 @@ foreach ($store as $product) {
 }
 
 ?>
+</div>
 </div>
 </body>
